@@ -14,7 +14,8 @@ var HOME_URL_B64 = "aHR0cHM6Ly9tb2IudG91Y2hjcmljLmNvbQ";
 // Matches HDHub4u signature exactly: filter, page, providerContext
 function getPosts(filter, page, providerContext) {
     console.log("TouchCric getPosts filter:", filter, "page:", page);
-    if (page > 0) return [];
+    // App sends page 1 for first page
+    if (page > 1) return [];
 
     try {
         var posts = [];
