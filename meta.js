@@ -1,37 +1,40 @@
 // TouchCric Meta Module
-// Returns metadata for a match/channel
+// Handles the "Info" page where users see High/Medium/Low options
 
 function getMetaData(link, providerContext) {
     console.log("TouchCric getMetaData:", link);
 
     try {
-        var channelData = JSON.parse(link);
+        var data = JSON.parse(link);
+        var title = data.title || "Live Match";
 
+        // Return structured data for the Info Page
+        // "linkList" contains the playback options
         return {
-            title: channelData.channelName || "Live Cricket",
-            synopsis: "Live Cricket Streaming from TouchCric. Watch SA20 2026, Big Bash League, IPL and more.",
+            title: title,
+            synopsis: "Select Quality to Play",
             image: "https://mob.touchcric.com/favicon.ico",
-            poster: "https://mob.touchcric.com/favicon.ico",
             type: "live",
-            imdbId: "",
-            linkList: [{
-                title: "Watch Live",
-                directLinks: [{
-                    title: "Play Stream",
-                    link: link
-                }]
-            }]
+            linkList: [
+                {
+                    title: "Select Stream Quality",
+                    // These direct links will be passed to stream.js when clicked
+                    directLinks: [
+                        { title: "High Quality (720p/HD)", link: JSON.stringify({ ...data, quality: "high" }) },
+                        { title: "Medium Quality (480p)", link: JSON.stringify({ ...data, quality: "medium" }) },
+                        { title: "Low Quality (360p)", link: JSON.stringify({ ...data, quality: "low" }) }
+                    ]
+                }
+            ]
         };
 
     } catch (err) {
         console.error("getMetaData error:", err);
         return {
-            title: "Live Cricket",
-            synopsis: "Live Cricket Streaming",
-            image: "https://mob.touchcric.com/favicon.ico",
-            poster: "",
+            title: "Error",
+            synopsis: "Could not load match info",
+            image: "",
             type: "live",
-            imdbId: "",
             linkList: []
         };
     }
