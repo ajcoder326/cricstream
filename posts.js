@@ -6,8 +6,9 @@ var headers = {
     "Referer": "https://mob.touchcric.com/"
 };
 
-// Switch to corsproxy.io as proxyium is blocking requests
-var PROXY_BASE = "https://corsproxy.io/?";
+// Switch to allorigins as corsproxy.io is hitting Cloudflare
+var PROXY_BASE = "https://api.allorigins.win/raw?url=";
+// FLbk: https://thingproxy.freeboard.io/fetch/
 // API: https://vidict.net/api/channelsList_touchcric.php?sn=M8Jj-0NKO-aYb8-NXYQ-6a3gc
 // No base64 encoding needed for corsproxy.io
 var API_URL = "https://vidict.net/api/channelsList_touchcric.php?sn=M8Jj-0NKO-aYb8-NXYQ-6a3gc";

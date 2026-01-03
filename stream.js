@@ -22,8 +22,8 @@ function getStreams(link, type) {
         if (!token) {
             console.log("No token, fetching from homepage...");
             try {
-                // Use corsproxy.io
-                var PROXY_URL = "https://corsproxy.io/?" + encodeURIComponent("https://mob.touchcric.com/");
+                // Use allorigins
+                var PROXY_URL = "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://mob.touchcric.com/");
 
                 console.log("Fetching token via:", PROXY_URL);
                 var homeResponse = axios.get(PROXY_URL, { headers: headers });
