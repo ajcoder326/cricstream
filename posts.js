@@ -1,12 +1,14 @@
 // TouchCric Posts Module
-// Returns posts/matches for a given catalog
+// Uses proxy to access blocked site
 
 var headers = {
     "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
     "Referer": "https://mob.touchcric.com/"
 };
 
-var API_URL = "https://vidict.net/api/channelsList_touchcric.php?sn=M8Jj-0NKO-aYb8-NXYQ-6a3gc";
+// Proxy URL - proxyium encodes the target URL in base64
+var PROXY_BASE = "https://195.3.220.74/?__cpo=";
+var HOME_URL_ENCODED = "aHR0cHM6Ly9tb2IudG91Y2hjcmljLmNvbQ"; // base64 of https://mob.touchcric.com
 
 function getPosts(catalogId, page) {
     console.log("TouchCric getPosts:", catalogId, "page:", page);
@@ -16,69 +18,47 @@ function getPosts(catalogId, page) {
     }
 
     try {
-        // Fetch homepage for token
-        var homeResponse = axios.get("https://mob.touchcric.com/", { headers: headers });
-        var homeHtml = homeResponse.data;
-
+        // Try to fetch token via proxy
         var token = "";
-        var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']([^"']+)["']\s*\)/);
-        if (tokenMatch) {
-            token = tokenMatch[1];
-        }
+        try {
+            var proxyUrl = PROXY_BASE + HOME_URL_ENCODED;
+            console.log("Fetching via proxy:", proxyUrl);
+            var homeResponse = axios.get(proxyUrl, { headers: headers });
+            var homeHtml = homeResponse.data;
 
-        // Fetch channels from API
-        var apiResponse = axios.get(API_URL, { headers: headers });
-        var channels = [];
-
-        if (apiResponse && apiResponse.data) {
-            if (Array.isArray(apiResponse.data)) {
-                channels = apiResponse.data;
-            } else if (apiResponse.data.channels) {
-                channels = apiResponse.data.channels;
+            var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']([^"']+)["']\s*\)/);
+            if (tokenMatch) {
+                token = tokenMatch[1];
+                console.log("Got token:", token.substring(0, 20) + "...");
             }
+        } catch (e) {
+            console.log("Proxy fetch failed, using fallback");
         }
+
+        // Return default matches with token
+        var matches = [
+            { title: "SA20 2026 - Live", id: 1, server: "tgs1.myluck1.top" },
+            { title: "Big Bash League - Live", id: 2, server: "tgs1.myluck1.top" },
+            { title: "Australia vs England - 4th Test", id: 3, server: "tgs1.myluck1.top" },
+            { title: "Bangladesh Premier League", id: 4, server: "tgs1.myluck1.top" },
+            { title: "International League T20", id: 5, server: "tgs1.myluck1.top" }
+        ];
 
         var posts = [];
-        for (var i = 0; i < channels.length; i++) {
-            var ch = channels[i];
+        for (var i = 0; i < matches.length; i++) {
+            var m = matches[i];
             posts.push({
-                title: ch.channelName || ch.title || ("Channel " + (i + 1)),
-                image: ch.logo || "https://mob.touchcric.com/favicon.ico",
+                title: m.title,
+                image: "https://mob.touchcric.com/favicon.ico",
                 link: JSON.stringify({
-                    fmsUrl: ch.fmsUrl || ch.server || "tgs1.myluck1.top",
-                    streamName: ch.streamName || ch.stream,
-                    streamId: ch.streamId || ch.id || (i + 1),
+                    fmsUrl: m.server,
+                    streamName: "stream" + m.id,
+                    streamId: m.id,
                     token: token,
-                    channelName: ch.channelName || ch.title
+                    channelName: m.title
                 }),
                 type: "live"
             });
-        }
-
-        // Default matches if API returns empty
-        if (posts.length === 0) {
-            var defaults = [
-                { title: "SA20 2026 - Live", id: 1 },
-                { title: "Big Bash League - Live", id: 2 },
-                { title: "Australia vs England - 4th Test", id: 3 },
-                { title: "Bangladesh Premier League", id: 4 },
-                { title: "International League T20", id: 5 }
-            ];
-
-            for (var j = 0; j < defaults.length; j++) {
-                posts.push({
-                    title: defaults[j].title,
-                    image: "https://mob.touchcric.com/favicon.ico",
-                    link: JSON.stringify({
-                        fmsUrl: "tgs1.myluck1.top",
-                        streamName: "stream" + defaults[j].id,
-                        streamId: defaults[j].id,
-                        token: token,
-                        channelName: defaults[j].title
-                    }),
-                    type: "live"
-                });
-            }
         }
 
         return posts;
