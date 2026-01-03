@@ -30,7 +30,7 @@ function getPosts(filter, page) {
         for (var j = 0; j < defaults.length; j++) {
             posts.push({
                 title: defaults[j].t,
-                image: "https://mob.touchcric.com/favicon.ico",
+                image: "https://www.google.com/favicon.ico",
                 link: JSON.stringify({
                     fmsUrl: "tgs1.myluck1.top",
                     streamName: "stream" + defaults[j].id,

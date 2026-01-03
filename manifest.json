@@ -1,9 +1,9 @@
 {
     "name": "TouchCric",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "author": "StreamBox",
     "description": "Live Cricket Streaming - SA20, Big Bash, IPL, T20 World Cup",
-    "icon": "https://mob.touchcric.com/favicon.ico",
+    "icon": "https://www.google.com/favicon.ico",
     "modules": {
         "catalog": "catalog.js",
         "posts": "posts.js",
