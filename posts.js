@@ -26,10 +26,17 @@ function getPosts(filter, page, providerContext) {
             var homeProxy = PROXY_BASE + HOME_URL_B64;
             var homeResponse = axios.get(homeProxy, { headers: headers });
             var homeHtml = homeResponse.data;
-            var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']([^"']+)["']\s*\)/);
+
+            // Log snippet to debug
+            console.log("Home HTML Snippet:", homeHtml.substring(0, 100));
+
+            // Relaxed regex: match single or double quotes, or no quotes
+            var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']?([^"'\)]+)["']?\s*\)/);
             if (tokenMatch) {
                 token = tokenMatch[1];
                 console.log("Token:", token.substring(0, 10) + "...");
+            } else {
+                console.error("Token Not Found. HTML might be proxy landing page?");
             }
         } catch (e) {
             console.error("Token fetch failed:", e);
@@ -43,13 +50,23 @@ function getPosts(filter, page, providerContext) {
             var apiResponse = axios.get(apiProxy, { headers: headers });
             var data = apiResponse.data;
 
+            // Log data type and snippet
+            console.log("API Data Type:", typeof data);
+            if (typeof data === "string") {
+                console.log("API Response Snippet:", data.substring(0, 200));
+            } else {
+                console.log("API Response (JSON):", JSON.stringify(data).substring(0, 200));
+            }
+
             var channels = [];
             if (Array.isArray(data)) {
                 channels = data;
             } else if (data && data.channels) {
                 channels = data.channels;
             } else if (typeof data === "string") {
-                try { channels = JSON.parse(data); } catch (e) { }
+                try { channels = JSON.parse(data); } catch (e) {
+                    console.error("Failed to parse API string JSON");
+                }
             }
 
             console.log("API returned channels:", channels.length);

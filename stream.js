@@ -30,7 +30,11 @@ function getStreams(link, type) {
                 console.log("Fetching token via:", PROXY_URL);
                 var homeResponse = axios.get(PROXY_URL, { headers: headers });
                 var homeHtml = homeResponse.data;
-                var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']([^"']+)["']\s*\)/);
+
+                // Debug Log
+                console.log("Proxy HTML Snippet:", homeHtml.substring(0, 100));
+
+                var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']?([^"'\)]+)["']?\s*\)/);
                 if (tokenMatch) {
                     token = tokenMatch[1];
                     console.log("Got token via proxy:", token.substring(0, 10) + "...");
