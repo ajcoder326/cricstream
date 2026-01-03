@@ -19,9 +19,36 @@ function getPosts(catalogId, page) {
         var posts = [];
         var token = "";
 
+        // DEBUG: Force return defaults first to ensure page isn't blank
+        // This confirms if the issue is network blocking or syntax error
+        // The 'posts' variable is already declared above, so we just assign to it.
+        posts = [];
+        var defaults = [
+            { t: "Live Cricket - SA20 (Debug)", id: 1 },
+            { t: "Live Cricket - BBL (Debug)", id: 2 },
+        ];
+        for (var j = 0; j < defaults.length; j++) {
+            posts.push({
+                title: defaults[j].t,
+                image: "https://mob.touchcric.com/favicon.ico",
+                link: JSON.stringify({
+                    fmsUrl: "tgs1.myluck1.top",
+                    streamName: "stream" + defaults[j].id,
+                    streamId: defaults[j].id,
+                    token: "",
+                    channelName: defaults[j].t
+                }),
+                type: "live"
+            });
+        }
+        // If we want to try fetching real data, we can append or replace
+        // But for now, let's just return this to test visibility
+        // Comment out the return to attempt fetching:
+        // return posts;
+
         // 1. Fetch Homepage for Token (needed for playback)
         try {
-            var homeProxy = PROXY_BASE + HOME_URL_B64;
+            var homeProxy = PROXY_BASE + HOME_URL_B64; // Corrected from HOME_URL_ENCODED
             var homeResponse = axios.get(homeProxy, { headers: headers });
             var homeHtml = homeResponse.data;
             var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']([^"']+)["']\s*\)/);
