@@ -13,9 +13,11 @@ function getPosts(filter, page, providerContext) {
     if (page > 1) return [];
 
     try {
-        // Direct fetch of homepage HTML (App should handle bypassing if possible, or we rely on this working)
-        console.log("Fetching Homepage:", HOME_URL);
-        var response = axios.get(HOME_URL, { headers: headers });
+        // Use CodeTabs proxy as requested
+        var PROXY_URL = "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(HOME_URL);
+        console.log("Fetching Homepage via Proxy:", PROXY_URL);
+
+        var response = axios.get(PROXY_URL, { headers: headers });
         var html = response.data;
 
         var $ = cheerio.load(html);
