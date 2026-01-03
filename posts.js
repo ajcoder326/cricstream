@@ -21,31 +21,6 @@ function getPosts(filter, page, providerContext) {
         var posts = [];
         var token = "";
 
-        // DEBUG: Force return defaults first to ensure page isn't blank
-        // This confirms if the issue is network blocking or syntax error
-        var defaults = [
-            { t: "Live Cricket - SA20 (Debug " + (filter || "Live") + ")", id: 1 },
-            { t: "Live Cricket - BBL (Debug " + (filter || "Live") + ")", id: 2 },
-        ];
-        for (var j = 0; j < defaults.length; j++) {
-            posts.push({
-                title: defaults[j].t,
-                image: "https://www.google.com/favicon.ico", // Safe icon
-                link: JSON.stringify({
-                    fmsUrl: "tgs1.myluck1.top",
-                    streamName: "stream" + defaults[j].id,
-                    streamId: defaults[j].id,
-                    token: "",
-                    channelName: defaults[j].t
-                }),
-                type: "live"
-            });
-        }
-
-        // Return debug items immediately to ensure visibility
-        return posts;
-
-        /* NETWORK CODE DISABLED until we see debug items
         // 1. Fetch Homepage for Token (needed for playback)
         try {
             var homeProxy = PROXY_BASE + HOME_URL_B64;
@@ -63,11 +38,71 @@ function getPosts(filter, page, providerContext) {
         // 2. Fetch API for Channels via Proxy
         try {
             var apiProxy = PROXY_BASE + API_URL_B64;
-            // ... (rest of logic)
+            console.log("Fetching API via proxy:", apiProxy);
+
+            var apiResponse = axios.get(apiProxy, { headers: headers });
+            var data = apiResponse.data;
+
+            var channels = [];
+            if (Array.isArray(data)) {
+                channels = data;
+            } else if (data && data.channels) {
+                channels = data.channels;
+            } else if (typeof data === "string") {
+                try { channels = JSON.parse(data); } catch (e) { }
+            }
+
+            console.log("API returned channels:", channels.length);
+
+            for (var i = 0; i < channels.length; i++) {
+                var ch = channels[i];
+                var title = ch.channelName || ch.title || "Match " + (i + 1);
+                var server = ch.fmsUrl || ch.server || "tgs1.myluck1.top";
+                var stream = ch.streamName || ch.stream || ("stream" + ch.streamId);
+                var id = ch.streamId || ch.id || (i + 1);
+
+                posts.push({
+                    title: title,
+                    image: ch.logo || "https://www.google.com/favicon.ico",
+                    link: JSON.stringify({
+                        fmsUrl: server,
+                        streamName: stream,
+                        streamId: id,
+                        token: token,
+                        channelName: title
+                    }),
+                    type: "live"
+                });
+            }
+
         } catch (apiErr) {
             console.error("API proxy failed:", apiErr);
         }
-        */
+
+        // 3. Add Fallback/Debug matches if API failed OR if we just want defaults visible
+        if (posts.length === 0) {
+            console.log("Using fallback matches");
+            var defaults = [
+                { t: "Live Cricket 1 (Fallback)", id: 1 },
+                { t: "Live Cricket 2 (Fallback)", id: 2 }
+            ];
+            for (var j = 0; j < defaults.length; j++) {
+                posts.push({
+                    title: defaults[j].t,
+                    image: "https://www.google.com/favicon.ico",
+                    link: JSON.stringify({
+                        fmsUrl: "tgs1.myluck1.top",
+                        streamName: "stream" + defaults[j].id,
+                        streamId: defaults[j].id,
+                        token: token, // Attempt to use fetched token even for fallback
+                        channelName: defaults[j].t
+                    }),
+                    type: "live"
+                });
+            }
+        }
+
+        return posts;
 
     } catch (err) {
         console.error("Critical error in getPosts:", err);
