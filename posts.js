@@ -6,10 +6,12 @@ var headers = {
     "Referer": "https://mob.touchcric.com/"
 };
 
-var PROXY_BASE = "https://195.3.220.74/?__cpo=";
+// Switch to corsproxy.io as proxyium is blocking requests
+var PROXY_BASE = "https://corsproxy.io/?";
 // API: https://vidict.net/api/channelsList_touchcric.php?sn=M8Jj-0NKO-aYb8-NXYQ-6a3gc
-var API_URL_B64 = "aHR0cHM6Ly92aWRpY3QubmV0L2FwaS9jaGFubmVsc0xpc3RfdG91Y2hjcmljLnBocD9zbj1NOEpqLTBOS08tYVliOC1OWFlRLTZhM2dj";
-var HOME_URL_B64 = "aHR0cHM6Ly9tb2IudG91Y2hjcmljLmNvbQ";
+// No base64 encoding needed for corsproxy.io
+var API_URL = "https://vidict.net/api/channelsList_touchcric.php?sn=M8Jj-0NKO-aYb8-NXYQ-6a3gc";
+var HOME_URL = "https://mob.touchcric.com/";
 
 // Matches HDHub4u signature exactly: filter, page, providerContext
 function getPosts(filter, page, providerContext) {
@@ -23,7 +25,7 @@ function getPosts(filter, page, providerContext) {
 
         // 1. Fetch Homepage for Token (needed for playback)
         try {
-            var homeProxy = PROXY_BASE + HOME_URL_B64;
+            var homeProxy = PROXY_BASE + encodeURIComponent(HOME_URL);
             var homeResponse = axios.get(homeProxy, { headers: headers });
             var homeHtml = homeResponse.data;
 
@@ -44,7 +46,7 @@ function getPosts(filter, page, providerContext) {
 
         // 2. Fetch API for Channels via Proxy
         try {
-            var apiProxy = PROXY_BASE + API_URL_B64;
+            var apiProxy = PROXY_BASE + encodeURIComponent(API_URL);
             console.log("Fetching API via proxy:", apiProxy);
 
             var apiResponse = axios.get(apiProxy, { headers: headers });

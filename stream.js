@@ -22,10 +22,8 @@ function getStreams(link, type) {
         if (!token) {
             console.log("No token, fetching from homepage...");
             try {
-                // Proxy URL - proxyium encodes the target URL in base64
-                var PROXY_BASE = "https://195.3.220.74/?__cpo=";
-                var HOME_URL_B64 = "aHR0cHM6Ly9tb2IudG91Y2hjcmljLmNvbQ"; // https://mob.touchcric.com
-                var PROXY_URL = PROXY_BASE + HOME_URL_B64;
+                // Use corsproxy.io
+                var PROXY_URL = "https://corsproxy.io/?" + encodeURIComponent("https://mob.touchcric.com/");
 
                 console.log("Fetching token via:", PROXY_URL);
                 var homeResponse = axios.get(PROXY_URL, { headers: headers });
