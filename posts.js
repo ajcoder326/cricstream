@@ -11,8 +11,8 @@ var PROXY_BASE = "https://195.3.220.74/?__cpo=";
 var API_URL_B64 = "aHR0cHM6Ly92aWRpY3QubmV0L2FwaS9jaGFubmVsc0xpc3RfdG91Y2hjcmljLnBocD9zbj1NOEpqLTBOS08tYVliOC1OWFlRLTZhM2dj";
 var HOME_URL_B64 = "aHR0cHM6Ly9tb2IudG91Y2hjcmljLmNvbQ";
 
-function getPosts(catalogId, page) {
-    console.log("TouchCric getPosts:", catalogId);
+function getPosts(filter, page) {
+    console.log("TouchCric getPosts filter:", filter, "page:", page);
     if (page > 0) return [];
 
     try {
