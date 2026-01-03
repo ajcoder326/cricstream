@@ -18,7 +18,32 @@ function getCatalog() {
             {
                 title: "Live Cricket",
                 id: "live",
-                items: []
+                items: [
+                    {
+                        title: "Live Cricket - SA20 (Direct)",
+                        image: "https://mob.touchcric.com/favicon.ico",
+                        link: JSON.stringify({
+                            fmsUrl: "tgs1.myluck1.top",
+                            streamName: "stream1_720p",
+                            streamId: 1,
+                            token: "",
+                            channelName: "Live Cricket - SA20"
+                        }),
+                        type: "live"
+                    },
+                    {
+                        title: "Live Cricket - BBL (Direct)",
+                        image: "https://mob.touchcric.com/favicon.ico",
+                        link: JSON.stringify({
+                            fmsUrl: "tgs1.myluck1.top",
+                            streamName: "stream2_720p",
+                            streamId: 2,
+                            token: "",
+                            channelName: "Live Cricket - BBL"
+                        }),
+                        type: "live"
+                    }
+                ]
             }
         ];
     } catch (err) {
