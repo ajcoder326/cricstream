@@ -1,97 +1,114 @@
 // TouchCric Posts Module
-// Scrapes live matches from proxied site
+// Fetches API via Proxy for reliable match listing
 
 var headers = {
     "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
     "Referer": "https://mob.touchcric.com/"
 };
 
-// Proxy URL - proxyium encodes the target URL in base64
 var PROXY_BASE = "https://195.3.220.74/?__cpo=";
-var HOME_URL_ENCODED = "aHR0cHM6Ly9tb2IudG91Y2hjcmljLmNvbQ"; // base64 of https://mob.touchcric.com
+// API: https://vidict.net/api/channelsList_touchcric.php?sn=M8Jj-0NKO-aYb8-NXYQ-6a3gc
+var API_URL_B64 = "aHR0cHM6Ly92aWRpY3QubmV0L2FwaS9jaGFubmVsc0xpc3RfdG91Y2hjcmljLnBocD9zbj1NOEpqLTBOS08tYVliOC1OWFlRLTZhM2dj";
+var HOME_URL_B64 = "aHR0cHM6Ly9tb2IudG91Y2hjcmljLmNvbQ";
 
 function getPosts(catalogId, page) {
-    console.log("TouchCric getPosts:", catalogId, "page:", page);
-
-    if (page > 0) {
-        return [];
-    }
+    console.log("TouchCric getPosts:", catalogId);
+    if (page > 0) return [];
 
     try {
-        var proxyUrl = PROXY_BASE + HOME_URL_ENCODED;
-        console.log("Fetching via proxy:", proxyUrl);
-        var homeResponse = axios.get(proxyUrl, { headers: headers });
-        var homeHtml = homeResponse.data;
-
-        // Extract token from showChannels("TOKEN")
+        var posts = [];
         var token = "";
-        var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']([^"']+)["']\s*\)/);
-        if (tokenMatch) {
-            token = tokenMatch[1];
-            console.log("Got token:", token.substring(0, 20) + "...");
+
+        // 1. Fetch Homepage for Token (needed for playback)
+        try {
+            var homeProxy = PROXY_BASE + HOME_URL_B64;
+            var homeResponse = axios.get(homeProxy, { headers: headers });
+            var homeHtml = homeResponse.data;
+            var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']([^"']+)["']\s*\)/);
+            if (tokenMatch) {
+                token = tokenMatch[1];
+                console.log("Token:", token.substring(0, 10) + "...");
+            }
+        } catch (e) {
+            console.error("Token fetch failed:", e);
         }
 
-        // Parse HTML to find matches using cheerio
-        var $ = cheerio.load(homeHtml);
-        var posts = [];
-        var seen = {};
+        // 2. Fetch API for Channels via Proxy
+        try {
+            var apiProxy = PROXY_BASE + API_URL_B64;
+            console.log("Fetching API via proxy:", apiProxy);
 
-        // Find all match links - they typically link to #pagetwo or have match info
-        $("a").each(function () {
-            var el = $(this);
-            var text = el.text().trim();
-            var href = el.attr("href") || "";
+            var apiResponse = axios.get(apiProxy, { headers: headers });
+            var data = apiResponse.data;
 
-            // Skip empty or duplicate
-            if (!text || seen[text] || text.length < 5) return;
+            // Handle different API response structures
+            var channels = [];
+            if (Array.isArray(data)) {
+                channels = data;
+            } else if (data && data.channels) {
+                channels = data.channels;
+            } else if (typeof data === "string") {
+                // Sometimes proxy returns stringified JSON
+                try { channels = JSON.parse(data); } catch (e) { }
+            }
 
-            // Skip navigation/footer links
-            if (text.toLowerCase().indexOf("contact") !== -1) return;
-            if (text.toLowerCase().indexOf("about") !== -1) return;
-            if (text.toLowerCase().indexOf("privacy") !== -1) return;
-            if (text.toLowerCase().indexOf("quality") !== -1) return;
-            if (href.indexOf("#video") !== -1) return;
+            console.log("API returned channels:", channels.length);
 
-            // Match links typically go to #pagetwo or contain match keywords
-            var isMatch = href.indexOf("#pagetwo") !== -1 ||
-                href.indexOf("#page") !== -1 ||
-                text.toLowerCase().indexOf("vs") !== -1 ||
-                text.toLowerCase().indexOf("live") !== -1 ||
-                text.toLowerCase().indexOf("league") !== -1 ||
-                text.toLowerCase().indexOf("cup") !== -1 ||
-                text.toLowerCase().indexOf("t20") !== -1 ||
-                text.toLowerCase().indexOf("test") !== -1;
-
-            if (isMatch && text.length > 3) {
-                seen[text] = true;
-
-                // Try to extract stream info from data attributes or onclick
-                var onclick = el.attr("onclick") || "";
-                var streamId = posts.length + 1;
+            for (var i = 0; i < channels.length; i++) {
+                var ch = channels[i];
+                // API keys: channelName/title, fmsUrl/server, streamName/stream, streamId/id
+                var title = ch.channelName || ch.title || "Match " + (i + 1);
+                var server = ch.fmsUrl || ch.server || "tgs1.myluck1.top";
+                var stream = ch.streamName || ch.stream || ("stream" + ch.streamId);
+                var id = ch.streamId || ch.id || (i + 1);
 
                 posts.push({
-                    title: text,
-                    image: "https://mob.touchcric.com/favicon.ico",
+                    title: title,
+                    image: ch.logo || "https://mob.touchcric.com/favicon.ico",
                     link: JSON.stringify({
-                        fmsUrl: "tgs1.myluck1.top",
-                        streamName: "stream" + streamId,
-                        streamId: streamId,
+                        fmsUrl: server,
+                        streamName: stream,
+                        streamId: id,
                         token: token,
-                        channelName: text,
-                        proxyHome: proxyUrl
+                        channelName: title
                     }),
                     type: "live"
                 });
-
-                console.log("Found match:", text);
             }
-        });
 
-        console.log("Total matches found:", posts.length);
+        } catch (apiErr) {
+            console.error("API proxy failed:", apiErr);
+        }
+
+        // 3. Fallback to default if API failed
+        if (posts.length === 0) {
+            console.log("Using fallback matches (API failed)");
+            var defaults = [
+                { t: "Live Cricket 1", id: 1 },
+                { t: "Live Cricket 2", id: 2 },
+                { t: "Live Cricket 3", id: 3 },
+                { t: "Live Cricket 4", id: 4 }
+            ];
+            for (var j = 0; j < defaults.length; j++) {
+                posts.push({
+                    title: defaults[j].t,
+                    image: "https://mob.touchcric.com/favicon.ico",
+                    link: JSON.stringify({
+                        fmsUrl: "tgs1.myluck1.top",
+                        streamName: "stream" + defaults[j].id,
+                        streamId: defaults[j].id,
+                        token: token,
+                        channelName: defaults[j].t
+                    }),
+                    type: "live"
+                });
+            }
+        }
+
         return posts;
 
     } catch (err) {
-        console.error("getPosts error:", err);
+        console.error("Critical error in getPosts:", err);
         return [];
     }
 }
