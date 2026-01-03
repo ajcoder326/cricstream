@@ -18,19 +18,29 @@ function getStreams(link, type) {
         var token = channelData.token || "";
         var channelName = channelData.channelName || "Live Stream";
 
-        // If no token, try to fetch it from homepage
+        // If no token, try to fetch it from homepage via proxy
         if (!token) {
             console.log("No token, fetching from homepage...");
             try {
-                var homeResponse = axios.get("https://mob.touchcric.com/", { headers: headers });
+                // Use proxy URL - proxyium encodes the target URL in base64
+                var PROXY_URL = "https://195.3.220.74/?__cpo=aHR0cHM6Ly9tb2IudG91Y2hjcmljLmNvbQ";
+
+                var homeResponse = axios.get(PROXY_URL, { headers: headers });
                 var homeHtml = homeResponse.data;
                 var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']([^"']+)["']\s*\)/);
                 if (tokenMatch) {
                     token = tokenMatch[1];
-                    console.log("Got token:", token.substring(0, 20) + "...");
+                    console.log("Got token via proxy:", token.substring(0, 20) + "...");
                 }
             } catch (e) {
-                console.error("Failed to get token:", e);
+                console.error("Failed to get token via proxy:", e);
+                // Last resort: try direct
+                try {
+                    var homeResponse = axios.get("https://mob.touchcric.com/", { headers: headers });
+                    var homeHtml = homeResponse.data;
+                    var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']([^"']+)["']\s*\)/);
+                    if (tokenMatch) token = tokenMatch[1];
+                } catch (err) { }
             }
         }
 
