@@ -22,25 +22,24 @@ function getStreams(link, type) {
         if (!token) {
             console.log("No token, fetching from homepage...");
             try {
-                // Use proxy URL - proxyium encodes the target URL in base64
-                var PROXY_URL = "https://195.3.220.74/?__cpo=aHR0cHM6Ly9tb2IudG91Y2hjcmljLmNvbQ";
+                // Proxy URL - proxyium encodes the target URL in base64
+                var PROXY_BASE = "https://195.3.220.74/?__cpo=";
+                var HOME_URL_B64 = "aHR0cHM6Ly9tb2IudG91Y2hjcmljLmNvbQ"; // https://mob.touchcric.com
+                var PROXY_URL = PROXY_BASE + HOME_URL_B64;
 
+                console.log("Fetching token via:", PROXY_URL);
                 var homeResponse = axios.get(PROXY_URL, { headers: headers });
                 var homeHtml = homeResponse.data;
                 var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']([^"']+)["']\s*\)/);
                 if (tokenMatch) {
                     token = tokenMatch[1];
-                    console.log("Got token via proxy:", token.substring(0, 20) + "...");
+                    console.log("Got token via proxy:", token.substring(0, 10) + "...");
+                } else {
+                    console.error("Token regex match failed on proxy HTML");
                 }
             } catch (e) {
                 console.error("Failed to get token via proxy:", e);
-                // Last resort: try direct
-                try {
-                    var homeResponse = axios.get("https://mob.touchcric.com/", { headers: headers });
-                    var homeHtml = homeResponse.data;
-                    var tokenMatch = homeHtml.match(/showChannels\s*\(\s*["']([^"']+)["']\s*\)/);
-                    if (tokenMatch) token = tokenMatch[1];
-                } catch (err) { }
+                // Last resort omitted to avoid hanging
             }
         }
 
