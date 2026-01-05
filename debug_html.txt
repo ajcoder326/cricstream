@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-228700653-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-228700653-1');
+</script>
+
+<title>TouchCric | The Ashes Live Cricket Streaming | Australia vs England Live Cricket Streaming | Watch Live Cricket Streaming on Mobile </title>
+<meta property="description" content="Touchcric.com a Live Cricket Streaming mobile website. Watch live cricket streaming on your Smartphone. You can watch all the live international and domestic cricket games on Android, iPhone and Tablet. Live Cricket streams are available on iPhone, Samsung, Huawei, Oppo and other android based phones. Watch free cricket streaming on mobile phone. The Ashes Series 2025/26, Australia vs England Live Cricket Streaming on Touchcric. 5th Test Australia vs England in Sydney Cricket Ground, Australia from 4-8 January 2026. Big Bash League 2025/26, Melbourne Stars vs Melbourne Renegades Live Cricket Streaming on Touchcric. 22nd Match Melbourne Stars vs Melbourne Renegades played at Melbourne Cricket Ground, Australia on 4 January 2026. SA20 League 2026, MI Cape Town vs Paarl Royals Live Streaming on Touchcric. 13th Match MI Cape Town vs Paarl Royals in Newlands, Cape Town, South Africa on 4 January 2026. Bangladesh Premier League 2025/26 (BPL 2026), Sylhet Titans vs Chattogram Royals Live Streaming on Touchcric. 12th Match Sylhet Titans vs Chattogram Royals Live at Sylhet International Cricket Stadium, Bangladesh on 4 January 2026. International League T20 2026, Desert Vipers vs MI Emirates Live Streaming on Touchcric. Final Desert Vipers vs MI Emirates in Dubai International Cricket Stadium, UAE on 4 January 2026. South Africa Tour of India 2025, India vs South Africa Live Cricket Streaming on Touchcric. 5th T20 India vs South Africa in Narendra Modi Stadium, Ahmedabad, India on 19 December 2025. Men's T20 Asia Cup 2025, India vs Pakistan Live Cricket Streaming on Touchcric. Asia Cup Final India vs Pakistan in Dubai International Cricket Stadium, UAE on 28 September 2025. Indian Premier League 2024/25, Punjab Kings vs Royal Challengers Bengaluru Live Cricket Streaming on Touchcric. IPL Final Punjab Kings vs Royal Challengers Bengaluru Live at Narendra Modi Stadium, Ahmedabad, India on 3 June 2025. ICC Champions Trophy 2025 in Pakistan, India vs New Zealand Live Cricket Streaming on Touchcric. Final India vs New Zealand played at Dubai International Cricket Stadium, UAE on 9 March 2025. ICC T20 Cricket World Cup 2024, India vs South Africa Live Streaming on Touchcric. T20 Cricket World Cup Final, India vs South Africa Live at Kensington Oval, Bridgetown, Barbados, West Indies on 29 June 2024. All the Cricket games are freely available on your mobile device at Touchcric." />
+<meta name="keywords" content="Touchcric.com, Watch India vs South Africa Live Streaming, Watch Australia vs England Live Streaming, Watch Pakistan vs Sri Lanka Live Streaming, Watch The Ashes 2025 Live Streaming, Watch New Zealand vs West Indies Live Streaming, Watch Big Bash League 2025 Live Streaming, Watch India vs South Africa, Watch Australia vs England, Watch Pakistan vs Sri Lanka, Watch The Ashes 2025, Watch New Zealand vs West Indies, Watch Big Bash League 2025, Watch India vs South Africa Live, Watch Australia vs England Live, Watch Pakistan vs Sri Lanka Live, Watch The Ashes 2025 Live, Watch New Zealand vs West Indies Live, Watch Big Bash League 2025 Live, Live Cricket India vs South Africa, Live Cricket Australia vs England, Live Cricket Pakistan vs Sri Lanka, Live Cricket The Ashes 2025, Live Cricket New Zealand vs West Indies, Live Cricket Big Bash League 2025, 5th T20 India vs South Africa Live Cricket Streaming, 5th Test Australia vs England Live Cricket Streaming, Final Pakistan vs Sri Lanka Live Cricket Streaming, 22nd Match Big Bash League 2025 Live Cricket Streaming, 5th Test The Ashes 2025 Live Cricket Streaming, 3rd Test New Zealand vs West Indies Live Cricket Streaming, Watch India vs South Africa online, Watch Australia vs England online, Watch Pakistan vs Sri Lanka online, Watch The Ashes 2025 online, Watch New Zealand vs West Indies online, Watch Big Bash League 2025 online, Free Streaming India vs South Africa online, Free Streaming Australia vs England online, Free Streaming Pakistan vs Sri Lanka online, Free Streaming The Ashes 2025 online, Free Streaming New Zealand vs West Indies online, Free Streaming Big Bash League 2025 online, Free Streaming India vs South Africa, Free Streaming Australia vs England, Free Streaming Pakistan vs Sri Lanka, Free Streaming The Ashes 2025, Free Streaming New Zealand vs West Indies, Free Streaming Big Bash League 2025, India vs South Africa Live Cricket Streaming, Australia vs England Live Cricket Streaming, Pakistan vs Sri Lanka Live Cricket Streaming, The Ashes 2025 Live Cricket Streaming, New Zealand vs West Indies Live Cricket Streaming, Big Bash League 2025 Live Cricket Streaming, Watch India vs South Africa Live Cricket Streaming, Watch Australia vs England Live Cricket Streaming, Watch Pakistan vs Sri Lanka Live Streaming, Watch The Ashes 2025 Live Streaming, Watch New Zealand vs West Indies Live Streaming, Watch Big Bash League 2025 Live Cricket Streaming, Watch India vs South Africa Live Streaming, Watch Australia vs England Live Streaming, Watch Pakistan vs Sri Lanka Live Streaming, Watch The Ashes 2025 Live Streaming, Watch New Zealand vs West Indies Live Streaming, Watch Big Bash League 2025 Live Streaming, Watch India vs South Africa Live Streaming on Touchcric, Watch Australia vs England Live Streaming on Touchcric, Watch Pakistan vs Sri Lanka Live Streaming on Touchcric, Watch The Ashes 2025 Live Streaming on Touchcric, Watch New Zealand vs West Indies Live Streaming on Touchcric, Watch Big Bash League 2025 Live Streaming on Touchcric, Watch India vs South Africa Live Cricket on Touchcric, Watch Australia vs England Live Cricket on Touchcric, Watch Pakistan vs Sri Lanka Live Cricket on Touchcric, Watch The Ashes 2025 Live Cricket on Touchcric, Watch New Zealand vs West Indies Live Cricket on Touchcric, India vs South Africa Live Cricket Streaming on Touchcric, Australia vs England Live Cricket Streaming on Touchcric, Big Bash League 2025 Live Cricket Streaming on Touchcric, The Ashes 2025 Live Cricket Streaming on Touchcric, New Zealand vs West Indies Live Streaming on Touchcric, Australia vs England Live Streaming on Touchcric, The Ashes 2025 Live Streaming on Touchcric, Pakistan vs Sri Lanka Live Streaming on Touchcric, India vs South Africa Live Streaming on Touchcric, Touchcric Live Cricket Streaming" />
+<meta property="url" content="https://mob.touchcric.com/" />
+<meta property="site_name" content="Touchcric" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="True" name="HandheldFriendly">
+<meta property="og:title" content="TouchCric | The Ashes Live Cricket Streaming | Australia vs England Live Cricket Streaming | Watch Live Cricket Streaming on Mobile " />
+<meta property="og:description" content="Touchcric.com a Live Cricket Streaming mobile website. Watch live cricket streaming on your Smartphone. You can watch all the live international and domestic cricket games on Android, iPhone and Tablet. Live Cricket streams are available on iPhone, Samsung, Huawei, Oppo and other android based phones. Watch free cricket streaming on mobile phone. The Ashes Series 2025/26, Australia vs England Live Cricket Streaming on Touchcric. 5th Test Australia vs England in Sydney Cricket Ground, Australia from 4-8 January 2026. Big Bash League 2025/26, Melbourne Stars vs Melbourne Renegades Live Cricket Streaming on Touchcric. 22nd Match Melbourne Stars vs Melbourne Renegades played at Melbourne Cricket Ground, Australia on 4 January 2026. SA20 League 2026, MI Cape Town vs Paarl Royals Live Streaming on Touchcric. 13th Match MI Cape Town vs Paarl Royals in Newlands, Cape Town, South Africa on 4 January 2026. Bangladesh Premier League 2025/26 (BPL 2026), Sylhet Titans vs Chattogram Royals Live Streaming on Touchcric. 12th Match Sylhet Titans vs Chattogram Royals Live at Sylhet International Cricket Stadium, Bangladesh on 4 January 2026. International League T20 2026, Desert Vipers vs MI Emirates Live Streaming on Touchcric. Final Desert Vipers vs MI Emirates in Dubai International Cricket Stadium, UAE on 4 January 2026. South Africa Tour of India 2025, India vs South Africa Live Cricket Streaming on Touchcric. 5th T20 India vs South Africa in Narendra Modi Stadium, Ahmedabad, India on 19 December 2025. Men's T20 Asia Cup 2025, India vs Pakistan Live Cricket Streaming on Touchcric. Asia Cup Final India vs Pakistan in Dubai International Cricket Stadium, UAE on 28 September 2025. Indian Premier League 2024/25, Punjab Kings vs Royal Challengers Bengaluru Live Cricket Streaming on Touchcric. IPL Final Punjab Kings vs Royal Challengers Bengaluru Live at Narendra Modi Stadium, Ahmedabad, India on 3 June 2025. ICC Champions Trophy 2025 in Pakistan, India vs New Zealand Live Cricket Streaming on Touchcric. Final India vs New Zealand played at Dubai International Cricket Stadium, UAE on 9 March 2025. ICC T20 Cricket World Cup 2024, India vs South Africa Live Streaming on Touchcric. T20 Cricket World Cup Final, India vs South Africa Live at Kensington Oval, Bridgetown, Barbados, West Indies on 29 June 2024. All the Cricket games are freely available on your mobile device at Touchcric." />
+<meta property="og:url" content="https://mob.touchcric.com/" />
+<meta property="og:site_name" content="Touchcric" />
+<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="oxmYg1k7mFh6jVkOfQOVfmZIckbIgpLUahn__HPTycs" />
+<meta name="monetag" content="ed54d85905a04015996be9b75c22306e">
+<link href="https://mob.touchcric.com/css/mediaqueries.css" rel="stylesheet" type="text/css" />
+<link href="https://mob.touchcric.com/css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://mob.touchcric.com/css/jquery.mobile-1.4.1.min.css">
+<script type="text/javascript">
+    aclib.runPop({
+        zoneId: '2452363',
+    });
+</script>
+<meta name="ahrefs-site-verification" content="6319e2328ece95493f45202266fd0b2068b8bc7b52a0a15535e559d17ec690c0">
+<script src="https://mob.touchcric.com/js/jquery-1.10.2.min.js"></script>
+<script src="https://mob.touchcric.com/js/jquery.mobile-1.4.1.min.js"></script>
+<script src="https://mob.touchcric.com/js/hlsjs.0.12.4.min.js"></script>
+<script src="https://mob.touchcric.com/js/simplepeer_9_7_2.min.js?id=51448211"></script>
+<script src="https://mob.touchcric.com/js/lz-string.min.js"></script>
+<script src="https://mob.touchcric.com/js/vidictPeer_server_touchcric.min.js?id=39.1"></script>
+<!-- VUID Generation Script -->
+<script>
+(function(){
+  function uuidv4(){return([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,c=>(c^crypto.getRandomValues(new Uint8Array(1))[0]&15>>c/4).toString(16));}
+  function getCookie(n){return document.cookie.split('; ').find(r=>r.startsWith(n+'='))?.split('=')[1];}
+  var v = getCookie('vuid');
+  if(!v){
+	v = uuidv4();
+	var c = "vuid="+v+"; Max-Age="+(365*24*3600)+"; Path=/; SameSite=Lax";
+	if (location.protocol === 'https:') c += "; Secure";
+	document.cookie = c;
+  }
+  try { localStorage.setItem('vuid', v); } catch(e){}
+  window.VUID = v;
+})();
+</script>
+<script>
+var isDesktop = {
+    Windows: function() {
+        return navigator.platform.match('Win32|Win16|Win64|WinCE|Windows');
+    },
+    Mac: function() {
+        return navigator.platform.match('MacIntel|Macintosh|MacPPC|Mac68K');
+    },
+    any: function() {
+        return (isDesktop.Windows() || isDesktop.Mac());
+    }
+};
+		
+	if (isDesktop.any()){
+		window.location='https://me.webcric.com';
+	}
+</script>
+
+</head>
+
+<body>
+
+<div class="wrapper" data-role="page" id="pageone">
+<div class="header">
+
+<a href="https://mob.touchcric.com/" onclick="showChannels('');" data-transition="slide"><img src="https://mob.touchcric.com/images/logo.png" alt="Touchcric Logo" /></a>
+
+</div>
+<center>
+<!-- 
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'a6806c1b4e39f84cee12c578763be394',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//nativesprivately.com/a6806c1b4e39f84cee12c578763be394/invoke.js"></script>
+-->
+</center>
+
+<div class="mca" id="channels">
+
+</div>
+<br>
+
+<center>
+
+<div><script data-cfasync="false" async type="text/javascript" src="//cx.dornrusky.com/tw09g2ANuQelB0U/120535"></script></div>
+
+</center>
+
+<div class="contact">
+<center><a href="https://mob.touchcric.com/downloads/touchcric.apk" data-transition="fade"><img src="https://mob.touchcric.com/images/touchcric-apk.png" alt="Download Touchcric App on Android" /></a>
+</center>
+</div>
+<br>
+<center><p>&copy; 2025 TouchCric.com </p></center>
+<div class="clear"></div>
+</div>
+<!--#############################wrapper 1 END #############################-->
+
+<div class="wrapper" data-role="page" id="pagetwo">
+<div class="header">
+
+<a href="https://mob.touchcric.com/" onclick="showChannels('');" data-transition="slide"><img src="https://mob.touchcric.com/images/logo.png" alt="Touchcric Logo" /></a>
+</div>
+
+<center>
+<!--
+<script type="text/javascript">
+	atOptions = {
+		'key' : '32b4d69c6210c56cd6f304f90ec34480',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//nativesprivately.com/32b4d69c6210c56cd6f304f90ec34480/invoke.js"></script>
+-->
+</center>
+
+<div class="mca" id="streams">
+</div>
+
+<center>
+<!--
+<script async="async" data-cfasync="false" src="//nativesprivately.com/f3ab61c875b9a9f08fcf98f761afb610/invoke.js"></script>
+<div id="container-f3ab61c875b9a9f08fcf98f761afb610"></div>
+-->
+</center>
+
+<div class="contact">
+<center><a href="https://touchcric.com/downloads/touchcric.apk" data-transition="fade"><img src="https://mob.touchcric.com/images/touchcric-apk.png" alt="Download Touchcric App on Android" /></a>
+</center>
+</div>
+<br>
+<center><p>&copy; 2025 TouchCric.com </p></center>
+<div class="clear"></div>
+</div>
+
+<!--#############################wrapper 2 END #############################-->
+
+<div class="wrapper"data-role="page" id="pagethree">
+<div class="header">
+
+
+<a href="https://mob.touchcric.com/" onclick="showChannels('');" data-transition="slide"><img src="https://mob.touchcric.com/images/logo.png" alt="Touchcric Logo" /></a>
+</div>
+
+<div class="add">
+ 
+</div>
+
+<div class="mca">
+<h1>High Quality Video</h1>
+
+<div class="clear"></div>
+</div>
+
+<div class="add">
+ 
+</div>
+
+<div class="add">
+<center><a href="#"><img src="https://mob.touchcric.com/images/add.jpg" alt="Touchcric Image" /></a>
+</center>
+</div>
+
+<div class="contact">
+<center><a href="#pageforth" data-transition="slide"><img src="https://mob.touchcric.com/images/contact.png" alt="Touchcric Contact us Page" /></a>
+</center>
+</div>
+
+<center><p>&copy; 2025 TouchCric.com </p></center>
+<div class="clear"></div>
+</div>
+
+<!--#############################wrapper 3 END #############################-->
+
+<div class="wrapper" data-role="page" id="pageforth">
+<div class="header">
+<a href="https://mob.touchcric.com/" onclick="showChannels('');" data-transition="slide"><img src="https://mob.touchcric.com/images/logo.png" alt="Touchcric Logo" /></a>
+</div>
+
+
+<div class="mca">
+
+<script>
+$(document).ready(function() {
+   
+$("#abcd").click(function ( ) {
+     //alert("abcd");
+	 var name=document.commentForm1.name.value;
+	 var msg=document.commentForm1.msg.value;
+	 
+		var err = 0;
+	
+				if(name == "")
+				{
+				alert('Please Enter Your email');
+		                return false;
+   				}
+				else if(msg == "")
+				{
+				alert('Please Enter Your Message');
+		                return false;
+   				}else{
+	 
+	 $.ajax({ 
+	 			
+	 			url: "email.php",
+                    type: "POST",
+                    data: { 'from' : 'web', 'guid' : 'from web page', 'email' : name, 'message' : msg} ,
+                   
+                    async: false,
+                    success: function(data) {
+                    
+                       
+                    }
+                });
+			
+				}
+	
+}); 
+});
+</script>
+<h1>Any issue? Let us know.</h1>
+
+<div class="dropdown_box">
+<form action="" method="get" name="commentForm1" id="commentForm1" class="form">
+<label class="con-text">EMAIL</label>
+<input name="name" id="name" type="text" class="con-box" />
+<div class="clear"></div>
+<label class="con-text">MESSAGE</label>
+<textarea name="msg" id="msg" cols="" rows="" class="con-mes-box"></textarea>
+<div class="clear"></div>
+
+<div class="clear"></div>
+<!--onclick="sendEmail()"-->
+ <a href="#options"  class="ui-btn ui-btn-inline ui-shadow11 ui-corner-all" id="abcd" data-rel="dialog"><img src="https://mob.touchcric.com/images/btn.png" width="110" height="38" alt="Touchcric Image"  style="float:right;margin-bottom:30px;"/></a>
+<div class="clear"></div>
+</form>
+
+</div>
+
+
+<div class="clear"></div>
+</div>
+
+
+<center><p>Copyrighted � 2025 TouchCric.com </p></center>
+<div class="clear"></div>
+</div>
+
+<!--#############################wrapper 4 END #############################-->
+
+<div class="wrapper" data-role="page" id="video">
+
+
+<div class="header">
+<a href="https://mob.touchcric.com/" onclick="showChannels('');" data-transition="slide"><img src="https://mob.touchcric.com/images/logo.png" alt="Touchcric Logo" /></a>
+
+</div>
+
+<center>
+
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'a6806c1b4e39f84cee12c578763be394',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//nativesprivately.com/a6806c1b4e39f84cee12c578763be394/invoke.js"></script>
+
+</center>
+
+<div class="mca" id="videoDiv">
+</div>
+
+<!--
+<center>
+
+<script type="text/javascript">
+	atOptions = {
+		'key' : '32b4d69c6210c56cd6f304f90ec34480',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//nativesprivately.com/32b4d69c6210c56cd6f304f90ec34480/invoke.js"></script>
+
+</center>
+-->
+<div class="contact">
+<center><a href="https://touchcric.com/downloads/touchcric.apk" data-transition="fade"><img src="https://mob.touchcric.com/images/touchcric-apk.png" alt="Download Touchcric App on Android" /></a>
+</center>
+</div>
+<br>
+<center><p>&copy; 2025 TouchCric.com </p></center>
+<div class="clear"></div>
+</div>
+
+<!--#############################wrapper 5 END #############################-->
+
+<div data-role="page" id="options">
+  <div data-role="header">
+  <h1>Thank you</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+  <p style="padding-left:10px;">Thank you, You will be contacted shortly!!</p>
+  <a href="#pageone" class="ui-btn ui-btn-inline ui-shadow ui-corner-all"><img src="https://mob.touchcric.com/images/go.png" width="120" height="46" alt="Touchcric Image" style="padding-top:20px;"/></a>
+  </div>
+  
+  </div>
+
+
+<!-- <script type="text/javascript" src="/js/touchcric_original.js?id=13072021"></script> -->
+
+<script type="text/javascript" src="/js/touchcric_vidictPeer.js?id=26062024"></script>
+
+<script>
+
+	var data;
+	var sn = "M8Jj-0NKO-aYb8-NXYQ-6a3gc";
+    //var videoPlayer;
+    var ea = "";
+	var jako="";
+    var videoPlayer;
+	//showChannels ();
+	showChannels ("7dbcd621a63638dd0859ba6075d2b17e709c90e6abeaa463d6da933e68715fe78f871df8330b171d59eb07fe46f249f558ea75f0f6805d7a461f54321a420135f");
+
+	function performGet (url){
+		console.log("GETTING URL: " + url);
+		try{
+			var request = new XMLHttpRequest();
+			request.open('GET', url, false);  // `false` makes the request synchronous
+			request.send(null);
+			console.log("request.status: " + request.status);
+			if (request.status === 200) {
+				console.log(request.responseText);
+				return request.responseText;
+			}
+		} catch (e){
+			console.log(e);
+		}
+	}
+
+        function clear (myNode){
+                while (myNode.firstChild) {
+                        myNode.removeChild(myNode.firstChild);
+                }
+        }
+
+
+	
+$(function(){
+    $.each(["show","hide", "toggleClass", "addClass", "removeClass"], function(){
+        var _oldFn = $.fn[this];
+        $.fn[this] = function(){
+            var hidden = this.find(":hidden").add(this.filter(":hidden"));
+            var visible = this.find(":visible").add(this.filter(":visible"));
+            var result = _oldFn.apply(this, arguments);
+            hidden.filter(":visible").each(function(){
+                $(this).triggerHandler("show");
+            });
+            visible.filter(":hidden").each(function(){
+                $(this).triggerHandler("hide");
+            });
+            return result;
+        }
+    });
+});
+
+$("#pagetwo").bind("show", function(){
+	if (document.getElementById("stream_id_0") == null) { 
+		window.location='https://mob.touchcric.com';
+	}
+	if (document.getElementById("videoplayer") != null) {
+		document.getElementById("videoplayer").pause();
+	}
+});
+
+</script>
+
+<!-- 
+<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://gekeebsirs.com/tag.min.js',5899785,document.body||document.documentElement)</script>
+-->
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b90da8e0cd32280',t:'MTc2NzU5Mzg1OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>

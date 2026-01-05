@@ -32,44 +32,82 @@ function getPosts(filter, page, providerContext) {
             console.log("Token found:", token);
         }
 
-        // Logic: Find all matches (usually in <a> tags or grid items)
-        // Adjust selectors based on actual site structure. 
-        // Based on previous knowledge, look for links containing "vs", "live", "league"
-        $("a").each(function () {
-            var el = $(this);
-            var title = el.text().trim();
-            var href = el.attr("href") || "";
+        // Logic: Parse Meta Description for matches
+        // The description contains text like: "Tournament Name, Team A vs Team B Live Cricket Streaming..."
+        var description = $("meta[property='description']").attr("content") ||
+            $("meta[name='description']").attr("content") || "";
 
-            if (!title || seen[title] || title.length < 5) return;
+        console.log("Meta Description found:", description.length, "chars");
 
-            // Filter logic
-            var isMatch = title.toLowerCase().indexOf("vs") !== -1 ||
-                title.toLowerCase().indexOf("live") !== -1 ||
-                title.toLowerCase().indexOf("league") !== -1 ||
-                title.toLowerCase().indexOf("t20") !== -1 ||
-                href.indexOf("match") !== -1;
+        // Split into sentences/segments
+        var segments = description.split(". ");
 
-            if (isMatch) {
-                seen[title] = true;
+        for (var i = 0; i < segments.length; i++) {
+            var seg = segments[i];
+            // Look for "vs" and "Live" to identify match strings
+            if (seg.indexOf(" vs ") !== -1 && (seg.indexOf("Live") !== -1 || seg.indexOf("Streaming") !== -1)) {
 
-                // Construct link data
-                // We need to pass enough info for meta.js and stream.js
-                // If we don't have stream ID yet, we might need to parse it from href or assign one
-                var streamId = posts.length + 1;
+                // Clean up title
+                // Example: "SA20 League 2026, MI Cape Town vs Paarl Royals Live Streaming on Touchcric"
+                // Target: "MI Cape Town vs Paarl Royals" or "SA20: MI Cape Town vs Paarl Royals"
 
-                posts.push({
-                    title: title,
-                    image: "https://mob.touchcric.com/favicon.ico",
-                    link: JSON.stringify({
+                var title = seg.replace(/Live.*$/, "").trim(); // Remove "Live Streaming..." suffix
+                if (title.endsWith(" on Touchcric")) title = title.replace(" on Touchcric", "");
+
+                // Optional: Shorten tournament names if needed, but full text is fine
+
+                if (title.length > 10 && !seen[title]) {
+                    seen[title] = true;
+                    // Assume sequential Stream IDs based on appearance order
+                    var streamId = posts.length + 1;
+
+                    posts.push({
                         title: title,
-                        url: href,
-                        token: token,
-                        streamId: streamId
-                    }),
-                    type: "live" // This type usually triggers meta.js if configured
-                });
+                        image: "https://mob.touchcric.com/favicon.ico",
+                        link: JSON.stringify({
+                            title: title,
+                            url: HOME_URL, // No specific URL needed, we build it
+                            token: token,
+                            streamId: streamId
+                        }),
+                        type: "live"
+                    });
+                }
             }
-        });
+        }
+
+        // Fallback: If description parsing fails, try the link text method again as backup
+        if (posts.length === 0) {
+            $("a").each(function () {
+                var el = $(this);
+                var title = el.text().trim();
+                var href = el.attr("href") || "";
+
+                if (!title || seen[title] || title.length < 5) return;
+
+                // Filter logic
+                var isMatch = title.toLowerCase().indexOf("vs") !== -1 ||
+                    title.toLowerCase().indexOf("live") !== -1 ||
+                    href.indexOf("match") !== -1;
+
+                if (isMatch) {
+                    seen[title] = true;
+                    var streamId = posts.length + 1;
+
+                    posts.push({
+                        title: title,
+                        image: "https://mob.touchcric.com/favicon.ico",
+                        link: JSON.stringify({
+                            title: title,
+                            url: href,
+                            token: token,
+                            streamId: streamId
+                        }),
+                        type: "live"
+                    });
+                }
+            });
+        }
 
         // Debug/Fallback if no matches found
         // Dump the first few links found to help debug selectors

@@ -75,7 +75,7 @@ async function runTest() {
         // Add HTML logging
         postsCode = postsCode.replace(
             'var html = response.data;',
-            'var html = response.data; console.log("Response Type:", typeof html); console.log("HTML Snippet:", html.substring(0, 500));'
+            'var html = response.data; fs.writeFileSync("debug_html.txt", html); console.log("Saved HTML to debug_html.txt");'
         );
 
         // Add Link count logging
