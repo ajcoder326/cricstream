@@ -8,7 +8,7 @@ var headers = {
 
 var HOME_URL = "https://mob.touchcric.com/";
 
-async async function getPosts(filter, page, providerContext) {
+async function getPosts(filter, page, providerContext) {
     console.log("TouchCric getPosts filter:", filter, "page:", page);
     if (page > 1) return [];
 
