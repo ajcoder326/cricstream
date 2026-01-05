@@ -72,14 +72,33 @@ function getPosts(filter, page, providerContext) {
         });
 
         // Debug/Fallback if no matches found
+        // Dump the first few links found to help debug selectors
         if (posts.length === 0) {
-            console.log("No matches found via scraping. Adding Debug Items.");
-            posts.push({
-                title: "Live Cricket - Debug Scrape Failed",
-                image: "https://www.google.com/favicon.ico",
-                link: JSON.stringify({ title: "Debug Match", streamId: 1, token: token }),
-                type: "live"
+            console.log("No matches found via filter. Dumping raw links.");
+            var rawCount = 0;
+            $("a").each(function () {
+                if (rawCount >= 10) return;
+                var t = $(this).text().trim();
+                var h = $(this).attr("href");
+                if (t && t.length > 3 && h) {
+                    posts.push({
+                        title: "Debug: " + t,
+                        image: "https://www.google.com/favicon.ico",
+                        link: JSON.stringify({ title: t, url: h, token: token, streamId: 900 + rawCount }),
+                        type: "live"
+                    });
+                    rawCount++;
+                }
             });
+
+            if (posts.length === 0) {
+                posts.push({
+                    title: "Live Cricket - No Links Found at all",
+                    image: "https://www.google.com/favicon.ico",
+                    link: JSON.stringify({ title: "Debug Match", streamId: 1, token: token }),
+                    type: "live"
+                });
+            }
         }
 
         console.log("Found", posts.length, "matches");
