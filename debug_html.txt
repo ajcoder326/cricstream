@@ -357,7 +357,7 @@ $("#abcd").click(function ( ) {
 	var jako="";
     var videoPlayer;
 	//showChannels ();
-	showChannels ("7dbcd621a63638dd0859ba6075d2b17e709c90e6abeaa463d6da933e68715fe78f871df8330b171d59eb07fe46f249f558ea75f0f6805d7a461f54321a420135f");
+	showChannels ("7dbcd621a63638dd08n9ba6075d2b17e709c90e6abeaa463d6da933e68715fe78f871df8330b171d59eb07fe46f249f558ea75f0f6805d7a461f54321a420135f");
 
 	function performGet (url){
 		console.log("GETTING URL: " + url);
@@ -416,6 +416,6 @@ $("#pagetwo").bind("show", function(){
 <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://gekeebsirs.com/tag.min.js',5899785,document.body||document.documentElement)</script>
 -->
 
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b90da8e0cd32280',t:'MTc2NzU5Mzg1OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b90e16b991c6f21',t:'MTc2NzU5NDEzOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
 </html>
